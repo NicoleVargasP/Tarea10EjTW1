@@ -5,7 +5,7 @@ namespace Tarea10EjTW1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Tarea10EjController : ControllerBase
+    public class Tarea10EjTW1Controller : ControllerBase
     {
         //1) Ejercicio 6 Buscar en lista
         [HttpGet("buscar/{animal}")]
@@ -107,12 +107,9 @@ namespace Tarea10EjTW1.Controllers
 
             return Ok(resultado);
         }
-        //7) Ejercicio 6 Agregar ítems a una lista genérica
-        [ApiController]
-        [Route("[controller]")]
-        public class ListaItemsController : ControllerBase
-        {
-            [HttpPost("agregaritem")]
+        //7) Ejercicio 6 Agregar items a una lista genérica
+        
+           [HttpPost("agregaritem")]
             public IActionResult AgregarItem([FromBody] string item)
             {
                 if (string.IsNullOrWhiteSpace(item))
@@ -134,7 +131,6 @@ namespace Tarea10EjTW1.Controllers
             {
                 return Ok(ListaItems.Items);
             }
-        }
         //8) //Ejercicio 21 Validar Edad
         [HttpGet("validaredad/{edad}")]
         public IActionResult ValidarEdad(int edad)
